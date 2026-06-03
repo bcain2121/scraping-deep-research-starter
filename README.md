@@ -12,6 +12,32 @@ This repo bundles practical patterns for:
 
 > No API keys or private credentials are included. Copy `.env.example` to `.env` and add your own keys.
 
+
+## Shareable agent skills
+
+This repo also includes installable Agent Skills in [`skills/`](skills/):
+
+- [`web-research-router`](skills/web-research-router/) — decides when to search, scrape, crawl, automate, or do deep research.
+- [`tavily-search`](skills/tavily-search/) — Tavily setup and search workflow, including how to get a free key.
+- [`scraping-primitives`](skills/scraping-primitives/) — single-page scraping, link extraction, and bounded crawling.
+- [`deep-research-workflow`](skills/deep-research-workflow/) — plan → gather → verify → synthesize research system.
+
+### Install the skills
+
+For Pi or other Agent Skills-compatible harnesses, copy the skill directories into your skills folder. For Pi:
+
+```bash
+git clone https://github.com/bcain2121/scraping-deep-research-starter.git
+mkdir -p ~/.pi/agent/skills
+cp -R scraping-deep-research-starter/skills/* ~/.pi/agent/skills/
+```
+
+Restart your agent and the skills should be discoverable.
+
+## Dependencies
+
+Required: Git, Python 3.10+, pip/venv, and internet access. Tavily requires a free API key. See [`docs/dependencies.md`](docs/dependencies.md).
+
 ## Quick start
 
 ```bash
@@ -105,6 +131,7 @@ See [`docs/deep-research-workflow.md`](docs/deep-research-workflow.md).
 ├── README.md
 ├── docs/
 │   ├── deep-research-workflow.md
+│   ├── dependencies.md
 │   ├── scraping-playbook.md
 │   └── tavily-free-key.md
 └── examples/python/
